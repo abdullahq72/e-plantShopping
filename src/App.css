@@ -1,0 +1,387 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6faf6;
+  color: #222;
+}
+
+/* ---------- Landing page ---------- */
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background image for the Paradise Nursery landing page */
+.background-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=80');
+  background-color: #2f6b45; /* fallback while the image loads or if offline */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.background-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 30, 10, 0.55);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  max-width: 1100px;
+  color: #fff;
+}
+
+.landing_content {
+  flex: 1 1 320px;
+  text-align: center;
+}
+
+.landing_content h1 {
+  font-size: 2.6rem;
+  margin: 0 0 12px;
+}
+
+.divider {
+  width: 120px;
+  height: 4px;
+  background: #fff;
+  margin: 0 auto 16px;
+  border-radius: 2px;
+}
+
+.landing_content p {
+  font-size: 1.3rem;
+  margin: 0 0 28px;
+}
+
+.get-started-button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.get-started-button:hover {
+  background: #3d8c40;
+}
+
+.aboutus_container {
+  flex: 1 1 360px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 8px 24px;
+  backdrop-filter: blur(4px);
+}
+
+.about-us h2 {
+  margin-top: 16px;
+}
+
+.about-us p {
+  line-height: 1.6;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2e7d32;
+  color: #fff;
+  padding: 12px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.navbar-brand h3 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.navbar-brand i {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.navbar-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.15rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  border-bottom-color: #fff;
+}
+
+.cart-icon {
+  position: relative;
+  display: inline-flex;
+  color: #fff;
+}
+
+.cart-icon svg circle {
+  fill: #fff;
+}
+
+.cart_quantity_count {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-30%);
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* ---------- Product listing ---------- */
+.product-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px 48px;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 40px 0 24px;
+}
+
+.category-underline {
+  width: 80px;
+  height: 3px;
+  background: #4caf50;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-title {
+  margin: 12px 0 4px;
+}
+
+.product-description {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #555;
+  flex: 1;
+}
+
+.product-price {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.product-button {
+  width: 100%;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.product-button:hover:not(:disabled) {
+  background: #3d8c40;
+}
+
+.product-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* ---------- Cart ---------- */
+.cart-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.cart-total {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cart-empty {
+  text-align: center;
+  color: #666;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item-image {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.cart-item-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cart-item-quantity-value {
+  min-width: 24px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.cart-item-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #2e7d32;
+  background: #fff;
+  color: #2e7d32;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-item-button:hover {
+  background: #e8f5e9;
+}
+
+.cart-item-total {
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.cart-item-delete {
+  background: #c62828;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.get-started-button1 {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.get-started-button1:hover {
+  background: #1b5e20;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cart-item-details {
+    align-items: center;
+  }
+}
